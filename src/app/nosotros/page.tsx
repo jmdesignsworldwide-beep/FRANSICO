@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { PageStub } from "@/components/sections/PageStub";
+import { NosotrosView } from "./NosotrosView";
 
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
   description:
-    "Conoce F&I WASH Auto Services: historia, propuesta de valor y alianzas con Liqui Moly y Multimodal Xpress en Santiago, RD.",
+    "Conoce F&I WASH Auto Services: el centro automotriz integral de Santiago que une mecánica, gomas y detailing (Velocity Wash) bajo un mismo techo. Distribuidor autorizado Liqui Moly.",
   alternates: { canonical: "/nosotros" },
+  openGraph: {
+    title: "Sobre Nosotros | F&I WASH Auto Services",
+    description:
+      "Mecánica, gomas y detailing premium en Santiago, bajo una sola marca. Alianzas con Liqui Moly y Multimodal Xpress.",
+    url: "/nosotros",
+  },
 };
 
 export default function NosotrosPage() {
-  return (
-    <PageStub
-      eyebrow="Sobre Nosotros"
-      title="Nosotros"
-      description="Nuestra historia, propuesta de valor y alianzas (Liqui Moly, Multimodal Xpress). El contenido completo llega en la próxima tanda."
-      accent="red"
-    />
-  );
+  return <NosotrosView />;
 }
