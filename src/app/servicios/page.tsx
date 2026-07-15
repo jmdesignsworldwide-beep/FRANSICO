@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
-import { PageStub } from "@/components/sections/PageStub";
+import { ServiciosView } from "./ServiciosView";
 
 export const metadata: Metadata = {
   title: "Servicios de Mecánica y Gomas",
   description:
-    "Neumáticos, montura y balanceo, frenos, cambio de aceite Liqui Moly, baterías, tren delantero y más en F&I WASH, Santiago.",
+    "Venta de neumáticos, montura y balanceo, sensores TPMS, nitrógeno, cambio de aceite Liqui Moly, frenos, tren delantero, baterías y reparación de cristales en F&I WASH, Santiago RD.",
   alternates: { canonical: "/servicios" },
+  openGraph: {
+    title: "Servicios de Mecánica y Gomas | F&I WASH Auto Services",
+    description:
+      "Los 10 servicios de mecánica y gomas de F&I WASH en Santiago. Distribuidor autorizado Liqui Moly. Cotiza por WhatsApp.",
+    url: "/servicios",
+  },
 };
 
 export default function ServiciosPage() {
-  return (
-    <PageStub
-      eyebrow="F&I WASH · Mecánica y Gomas"
-      title="Servicios"
-      description="Neumáticos, balanceo, frenos, aceite Liqui Moly, baterías y tren delantero. La página completa con los 10 servicios llega en la próxima tanda."
-      accent="red"
-    />
-  );
+  return <ServiciosView />;
 }
