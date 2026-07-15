@@ -7,6 +7,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Logo } from "@/components/ui/Logo";
 import { ThemedHero } from "@/components/heroes/ThemedHero";
+import { HERO_IMAGES } from "@/lib/heroImages";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
@@ -20,7 +21,13 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <ThemedHero variant="home" accent="red" full showScrollIndicator>
+    <ThemedHero
+      variant="home"
+      accent="red"
+      full
+      showScrollIndicator
+      image={HERO_IMAGES.home}
+    >
       {/* eyebrow */}
       <motion.div custom={0} variants={fadeUp} initial="hidden" animate="visible">
         <span className="glass inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-silver">

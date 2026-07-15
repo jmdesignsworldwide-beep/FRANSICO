@@ -73,6 +73,15 @@
 }
 
 @layer utilities {
+  /* Ken Burns: zoom/paneo lento de la foto de fondo del hero */
+  @keyframes kenburns {
+    0% { transform: scale(1) translate3d(0, 0, 0); }
+    100% { transform: scale(1.08) translate3d(-1.5%, -1%, 0); }
+  }
+  .animate-kenburns {
+    animation: kenburns 24s ease-in-out infinite alternate;
+  }
+
   /* Burbuja/espuma que sube (WaterScene) */
   @keyframes bubble {
     0% { transform: translate3d(0, 0, 0); opacity: 0; }
