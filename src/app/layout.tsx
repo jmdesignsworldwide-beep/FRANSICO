@@ -3,6 +3,9 @@ import { Anton, Oswald, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { SmoothScroll } from "@/providers/SmoothScroll";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
+import { CursorGlow } from "@/components/ui/CursorGlow";
 import { SITE } from "@/lib/site";
 
 /* Fuentes self-hosted por next/font (se sirven desde /_next → cumple CSP font-src 'self'). */
@@ -100,11 +103,15 @@ export default function RootLayout({
           Saltar al contenido
         </a>
 
-        <Navbar />
-        <main id="contenido" className="pt-16 md:pt-20">
-          {children}
-        </main>
-        <Footer />
+        <ScrollProgress />
+        <CursorGlow />
+        <SmoothScroll>
+          <Navbar />
+          <main id="contenido" className="pt-16 md:pt-20">
+            {children}
+          </main>
+          <Footer />
+        </SmoothScroll>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 
 import { ServiceCard } from "@/components/ui/ServiceCard";
 import { StaggerReveal, StaggerItem } from "@/components/ui/ScrollReveal";
+import { TextReveal } from "@/components/ui/TextReveal";
 import type { Service } from "@/lib/services";
 
 type Accent = "red" | "velocity";
@@ -35,11 +36,10 @@ export function ServicesGrid({
             {eyebrow}
           </p>
         </StaggerItem>
-        <StaggerItem>
-          <h2 className="mt-4 font-display text-4xl tracking-tight sm:text-5xl">
-            {title}
-          </h2>
-        </StaggerItem>
+        <TextReveal
+          text={title}
+          className="mt-4 font-display text-4xl tracking-tight sm:text-5xl"
+        />
         {subtitle ? (
           <StaggerItem>
             <p className="mt-4 text-silver-muted">{subtitle}</p>

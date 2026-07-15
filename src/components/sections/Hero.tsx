@@ -1,29 +1,45 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Calendar, ArrowRight, Sparkles } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { Magnetic } from "@/components/ui/Magnetic";
+import { Spotlight } from "@/components/ui/Spotlight";
+import { HeroFX } from "@/components/ui/HeroFX";
 import { SITE } from "@/lib/site";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.7, delay: 0.1 * i, ease: [0.22, 1, 0.36, 1] },
   }),
 };
 
 export function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 140]);
+
   return (
-    <section className="relative overflow-hidden">
-      {/* Fondo: gradiente animado + rejilla desvanecida */}
-      <div aria-hidden className="absolute inset-0 -z-10">
+    <section ref={sectionRef} className="relative overflow-hidden">
+      {/* Fondo: gradiente animado + rejilla desvanecida (parallax) */}
+      <motion.div style={{ y: bgY }} aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid-fade [background-size:100%_100%,44px_44px,44px_44px] mask-fade-edges" />
         <div className="absolute left-1/2 top-[-10%] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-fi-red/20 blur-[120px] animate-float" />
         <div className="absolute right-[10%] top-[30%] h-72 w-72 rounded-full bg-velocity/15 blur-[100px] animate-float [animation-delay:-3s]" />
-      </div>
+        <HeroFX accent="red" />
+      </motion.div>
+
+      {/* Spotlight que sigue el cursor (desktop) */}
+      <Spotlight accent="red" />
 
       <div className="container-page relative flex min-h-[calc(100vh-5rem)] flex-col items-center justify-center py-20 text-center">
         {/* eyebrow */}
@@ -76,20 +92,24 @@ export function Hero() {
           animate="visible"
           className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
         >
-          <WhatsAppButton
-            size="lg"
-            message="Hola F&I WASH, quisiera agendar una cita."
-          >
-            Escríbenos por WhatsApp
-          </WhatsAppButton>
-          <CTAButton
-            href="/contacto"
-            variant="outline"
-            size="lg"
-            icon={<Calendar size={18} />}
-          >
-            Agendar cita
-          </CTAButton>
+          <Magnetic strength={0.4}>
+            <WhatsAppButton
+              size="lg"
+              message="Hola F&I WASH, quisiera agendar una cita."
+            >
+              Escríbenos por WhatsApp
+            </WhatsAppButton>
+          </Magnetic>
+          <Magnetic strength={0.3}>
+            <CTAButton
+              href="/contacto"
+              variant="outline"
+              size="lg"
+              icon={<Calendar size={18} />}
+            >
+              Agendar cita
+            </CTAButton>
+          </Magnetic>
         </motion.div>
 
         {/* Accesos rápidos a divisiones */}
