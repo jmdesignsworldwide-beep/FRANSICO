@@ -7,11 +7,11 @@ import {
   useHasPointer,
 } from "@/hooks/usePrefersReducedMotion";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 const tint: Record<Accent, string> = {
   red: "rgba(227,6,19,0.16)",
-  velocity: "rgba(139,79,217,0.18)",
+  blue: "rgba(45,107,224,0.20)",
 };
 
 /**

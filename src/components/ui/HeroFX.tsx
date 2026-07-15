@@ -3,11 +3,11 @@
 import { useMemo } from "react";
 import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 const dot: Record<Accent, string> = {
   red: "bg-fi-red/40",
-  velocity: "bg-velocity-glow/40",
+  blue: "bg-velocity-glow/40",
 };
 
 /**

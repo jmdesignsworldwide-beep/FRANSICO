@@ -4,7 +4,7 @@ import { DetailingView } from "./DetailingView";
 export const metadata: Metadata = {
   title: "Detailing y Lavado · Velocity Wash",
   description:
-    "Detailing y lavado premium en Santiago con Velocity Wash: mantenimiento de leather, revitalización de pintura, corrección de rayaduras, cerámica, ozono y restauración de faros. 6to lavado gratis.",
+    "Detailing y lavado premium en Santiago con Velocity Wash: lavado express y premium, lavado y encerado, lavado de chasis y motor, detallado interior y exterior, y limpieza de llantas. 6to lavado gratis.",
   alternates: { canonical: "/detailing" },
   openGraph: {
     title: "Detailing y Lavado | Velocity Wash · F&I WASH",

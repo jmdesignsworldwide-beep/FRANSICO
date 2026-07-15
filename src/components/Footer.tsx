@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Instagram, Facebook, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
 import { SITE, NAV_LINKS, waLink } from "@/lib/site";
 import { Logo } from "./ui/Logo";
 
@@ -24,19 +24,11 @@ export function Footer() {
               href={SITE.social.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram de F&I WASH"
-              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/5 text-silver transition-colors hover:border-fi-red/50 hover:text-white"
+              aria-label="Instagram de F&I WASH (@fyiwashrd)"
+              className="inline-flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 text-sm text-silver transition-colors hover:border-fi-red/50 hover:text-white"
             >
               <Instagram size={18} />
-            </a>
-            <a
-              href={SITE.social.facebook}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook de F&I WASH"
-              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/5 text-silver transition-colors hover:border-fi-red/50 hover:text-white"
-            >
-              <Facebook size={18} />
+              {SITE.social.instagramHandle}
             </a>
           </div>
         </div>

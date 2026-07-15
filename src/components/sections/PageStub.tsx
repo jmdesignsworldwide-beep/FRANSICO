@@ -5,7 +5,7 @@ import { Construction, ArrowLeft } from "lucide-react";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 /**
  * Encabezado de página reutilizable para las rutas que aún se construyen

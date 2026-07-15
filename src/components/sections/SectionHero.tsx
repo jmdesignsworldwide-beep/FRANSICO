@@ -8,7 +8,7 @@ import { CTAButton } from "@/components/ui/CTAButton";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { ThemedHero, type HeroVariant } from "@/components/heroes/ThemedHero";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24, filter: "blur(8px)" },

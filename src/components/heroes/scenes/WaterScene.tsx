@@ -12,7 +12,7 @@ const rand = (i: number, s: number) => {
 
 /**
  * Escena "Agua / Wash / Brillo líquido" para /detailing (Velocity Wash).
- * Burbujas que suben + gotas que resbalan + caustics morados + ripples + shine.
+ * Burbujas que suben + gotas que resbalan + caustics azules + ripples + shine.
  * Ligera en móvil (menos piezas) y con fallback estático en reduced-motion.
  */
 export function WaterScene() {

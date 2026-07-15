@@ -9,12 +9,12 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 /**
  * Franja de la promo de fidelidad de Velocity Wash:
  * "6to lavado gratis · 12vo encerado gratis" — lema "Lava tu auto y gana".
- * Acento morado + dorado, con marquee, pulse y border beam.
+ * Acento azul + dorado, con marquee, pulse y border beam.
  */
 export function DetailingPromo() {
   return (
     <section aria-label="Promo de fidelidad Velocity Wash" className="py-6">
-      {/* Cinta marquee superior morado/dorado */}
+      {/* Cinta marquee superior azul/dorado */}
       <div className="relative overflow-hidden border-y border-velocity/30 bg-gradient-to-r from-velocity/10 via-velocity/25 to-velocity/10 py-3">
         <Marquee>
           {[
@@ -44,8 +44,8 @@ export function DetailingPromo() {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
           className="relative overflow-hidden rounded-3xl border border-white/10 bg-carbon-700/60 p-8 backdrop-blur-sm sm:p-10"
         >
-          <BorderBeam duration={9} colorFrom="#6B2FB3" colorTo="#F2B441" />
-          {/* glows de fondo morado + dorado */}
+          <BorderBeam duration={9} colorFrom="#2D6BE0" colorTo="#F2B441" />
+          {/* glows de fondo azul + dorado */}
           <div
             aria-hidden
             className="pointer-events-none absolute -right-16 -top-16 h-56 w-56 rounded-full bg-velocity/25 blur-3xl"
@@ -115,7 +115,7 @@ export function DetailingPromo() {
 
           <div className="relative mt-8 flex justify-center md:justify-start">
             <WhatsAppButton
-              accent="velocity"
+              accent="blue"
               message="Hola Velocity Wash, quiero información sobre la promo de lavados (6to gratis / 12vo encerado gratis)."
               pulse={false}
             >

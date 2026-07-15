@@ -8,9 +8,9 @@ export const SITE = {
   name: "F&I WASH Auto Services",
   shortName: "F&I WASH",
   detailingBrand: "Velocity Wash",
-  tagline: "Tu carro, en las mejores manos de Santiago.",
+  tagline: "Todo para tu vehículo en un solo lugar",
   description:
-    "Centro automotriz premium en Santiago, RD. Mecánica, gomas y balanceo (F&I WASH) + detailing y lavado profesional (Velocity Wash). Distribuidor autorizado Liqui Moly.",
+    "Centro automotriz premium en Santiago, RD. Mecánica, gomas, aros y accesorios (F&I WASH) + detailing y lavado profesional (Velocity Wash). Distribuidor autorizado Liqui Moly.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://fiwash.com.do",
 
   address: {
@@ -48,8 +48,8 @@ export const SITE = {
   ],
 
   social: {
-    instagram: "https://www.instagram.com/",
-    facebook: "https://www.facebook.com/",
+    instagram: "https://instagram.com/fyiwashrd",
+    instagramHandle: "@fyiwashrd",
   },
 
   partners: [

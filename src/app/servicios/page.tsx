@@ -2,14 +2,14 @@ import type { Metadata } from "next";
 import { ServiciosView } from "./ServiciosView";
 
 export const metadata: Metadata = {
-  title: "Servicios de Mecánica y Gomas",
+  title: "Servicios: Mecánica, Gomas y Accesorios",
   description:
-    "Venta de neumáticos, montura y balanceo, sensores TPMS, nitrógeno, cambio de aceite Liqui Moly, frenos, tren delantero, baterías y reparación de cristales en F&I WASH, Santiago RD.",
+    "Mecánica automotriz, gomas y aros, y accesorios en F&I WASH, Santiago RD: cambio de aceite, alineación, balanceo, frenos, tren delantero, gomas nuevas y usadas, reparación de aros, lubricantes y más.",
   alternates: { canonical: "/servicios" },
   openGraph: {
-    title: "Servicios de Mecánica y Gomas | F&I WASH Auto Services",
+    title: "Servicios: Mecánica, Gomas y Accesorios | F&I WASH Auto Services",
     description:
-      "Los 10 servicios de mecánica y gomas de F&I WASH en Santiago. Distribuidor autorizado Liqui Moly. Cotiza por WhatsApp.",
+      "Todo para tu vehículo en un solo lugar: mecánica, gomas & aros y auto adorno en F&I WASH, Santiago. Distribuidor autorizado Liqui Moly.",
     url: "/servicios",
   },
 };

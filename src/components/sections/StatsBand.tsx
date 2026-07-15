@@ -5,7 +5,7 @@ import { NumberTicker } from "@/components/ui/NumberTicker";
 import { StaggerReveal, StaggerItem } from "@/components/ui/ScrollReveal";
 import { TextReveal } from "@/components/ui/TextReveal";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 export type Stat = {
   icon: LucideIcon;

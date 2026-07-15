@@ -10,7 +10,7 @@ import { TrajectoryScene } from "./scenes/TrajectoryScene";
 import { SignalScene } from "./scenes/SignalScene";
 
 export type HeroVariant = "home" | "mechanics" | "wash" | "about" | "contact";
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 const scenes: Record<HeroVariant, () => ReactNode> = {
   home: () => <ShowroomScene />,

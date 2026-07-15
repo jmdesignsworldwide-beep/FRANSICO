@@ -9,7 +9,7 @@ import {
 } from "@/hooks/usePrefersReducedMotion";
 import { staggerItem } from "@/lib/motion";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 const accentMap = {
   red: {
@@ -19,7 +19,7 @@ const accentMap = {
       "bg-fi-red/10 text-fi-red group-hover:bg-fi-red group-hover:text-white",
     blob: "bg-fi-red/20",
   },
-  velocity: {
+  blue: {
     ring: "hover:border-velocity-glow/60",
     glow: "hover:shadow-glow-velocity",
     iconWrap:
