@@ -29,9 +29,14 @@ const config: Config = {
           muted: "#8A8F98",
         },
         velocity: {
-          // Acento morado sutil (Velocity Wash / detailing)
+          // Acento morado (Velocity Wash / detailing)
           DEFAULT: "#6B2FB3",
           glow: "#8B4FD9",
+        },
+        gold: {
+          // Toque dorado del brochure Velocity Wash
+          DEFAULT: "#F2B441",
+          glow: "#FFC95A",
         },
         offwhite: "#F5F5F5",
       },
@@ -45,6 +50,7 @@ const config: Config = {
         "glow-red-lg": "0 0 60px -10px rgba(227, 6, 19, 0.55)",
         "glow-velocity": "0 0 30px -5px rgba(107, 47, 179, 0.5)",
         "glow-velocity-lg": "0 0 60px -10px rgba(139, 79, 217, 0.55)",
+        "glow-gold": "0 0 30px -5px rgba(242, 180, 65, 0.5)",
       },
       backgroundImage: {
         "grid-fade":
@@ -70,6 +76,10 @@ const config: Config = {
           "0%, 100%": { boxShadow: "0 0 20px -6px rgba(227,6,19,0.55)" },
           "50%": { boxShadow: "0 0 34px -2px rgba(227,6,19,0.85)" },
         },
+        "pulse-glow-velocity": {
+          "0%, 100%": { boxShadow: "0 0 20px -6px rgba(107,47,179,0.55)" },
+          "50%": { boxShadow: "0 0 34px -2px rgba(139,79,217,0.9)" },
+        },
         float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-8px)" },
@@ -81,6 +91,7 @@ const config: Config = {
         "border-beam": "border-beam calc(var(--duration,8s)) infinite linear",
         "gradient-pan": "gradient-pan 8s ease infinite",
         "pulse-glow": "pulse-glow 2.6s ease-in-out infinite",
+        "pulse-glow-velocity": "pulse-glow-velocity 2.6s ease-in-out infinite",
         float: "float 6s ease-in-out infinite",
       },
     },
