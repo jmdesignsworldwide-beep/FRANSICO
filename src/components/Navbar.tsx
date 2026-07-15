@@ -66,13 +66,20 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     aria-current={active ? "page" : undefined}
-                    className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                    className={`group relative rounded-full px-4 py-2 text-sm font-medium transition-colors duration-200 ${
                       active
                         ? "text-white"
                         : "text-silver-muted hover:text-white"
                     }`}
                   >
                     {link.label}
+                    {/* Underline animado en hover (solo cuando no está activo) */}
+                    {!active ? (
+                      <span
+                        aria-hidden
+                        className="absolute inset-x-4 bottom-1 h-px origin-center scale-x-0 bg-fi-red transition-transform duration-300 group-hover:scale-x-100"
+                      />
+                    ) : null}
                     {active ? (
                       <motion.span
                         layoutId="nav-active"

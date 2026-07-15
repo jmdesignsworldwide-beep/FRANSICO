@@ -3,6 +3,7 @@
 import type { LucideIcon } from "lucide-react";
 import { NumberTicker } from "@/components/ui/NumberTicker";
 import { StaggerReveal, StaggerItem } from "@/components/ui/ScrollReveal";
+import { TextReveal } from "@/components/ui/TextReveal";
 
 type Accent = "red" | "velocity";
 
@@ -44,11 +45,10 @@ export function StatsBand({
             {eyebrow}
           </p>
         </StaggerItem>
-        <StaggerItem>
-          <h2 className="mt-4 font-display text-4xl tracking-tight sm:text-5xl">
-            {title}
-          </h2>
-        </StaggerItem>
+        <TextReveal
+          text={title}
+          className="mt-4 font-display text-4xl tracking-tight sm:text-5xl"
+        />
         {subtitle ? (
           <StaggerItem>
             <p className="mt-4 text-silver-muted">{subtitle}</p>

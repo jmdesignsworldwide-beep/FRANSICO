@@ -71,6 +71,24 @@
 }
 
 @layer utilities {
+  /* Meteoro: estela diagonal que cruza y se desvanece */
+  @keyframes meteor {
+    0% {
+      transform: translate(0, 0) rotate(215deg);
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-380px, 380px) rotate(215deg);
+      opacity: 0;
+    }
+  }
+  .animate-meteor {
+    animation: meteor linear infinite;
+  }
+
   /* Efecto shimmer sobre texto/superficies */
   .shimmer-text {
     background-image: linear-gradient(

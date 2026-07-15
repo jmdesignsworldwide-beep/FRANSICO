@@ -1,17 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { Magnetic } from "@/components/ui/Magnetic";
+import { Spotlight } from "@/components/ui/Spotlight";
+import { HeroFX } from "@/components/ui/HeroFX";
 
 type Accent = "red" | "velocity";
 
 const fadeUp = {
-  hidden: { opacity: 0, y: 24 },
+  hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
   visible: (i: number) => ({
     opacity: 1,
     y: 0,
+    filter: "blur(0px)",
     transition: { duration: 0.7, delay: 0.08 * i, ease: [0.22, 1, 0.36, 1] },
   }),
 };
@@ -42,10 +47,19 @@ export function SectionHero({
   waMessage?: string;
 }) {
   const isRed = accent === "red";
+
+  // Parallax: el fondo se mueve más lento que el contenido al hacer scroll.
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start start", "end start"],
+  });
+  const bgY = useTransform(scrollYProgress, [0, 1], [0, 120]);
+
   return (
-    <section className="relative overflow-hidden">
-      {/* Fondo: rejilla + destello del acento */}
-      <div aria-hidden className="absolute inset-0 -z-10">
+    <section ref={sectionRef} className="relative overflow-hidden">
+      {/* Fondo: rejilla + destello del acento (parallax) */}
+      <motion.div style={{ y: bgY }} aria-hidden className="absolute inset-0 -z-10">
         <div className="absolute inset-0 bg-grid-fade [background-size:100%_100%,44px_44px,44px_44px] mask-fade-edges" />
         <div
           className={`absolute left-1/2 top-[-20%] h-[34rem] w-[34rem] -translate-x-1/2 rounded-full blur-[120px] animate-float ${
@@ -61,7 +75,12 @@ export function SectionHero({
         {!isRed ? (
           <div className="absolute left-[12%] top-[55%] h-40 w-40 rounded-full bg-gold/10 blur-[90px] animate-float [animation-delay:-1.5s]" />
         ) : null}
-      </div>
+        {/* Partículas + meteoros sutiles */}
+        <HeroFX accent={accent} />
+      </motion.div>
+
+      {/* Spotlight que sigue el cursor (desktop) */}
+      <Spotlight accent={accent} />
 
       <div className="container-page relative flex min-h-[62vh] flex-col items-center justify-center py-24 text-center sm:min-h-[68vh]">
         {/* Breadcrumb */}
@@ -139,9 +158,11 @@ export function SectionHero({
           animate="visible"
           className="mt-9"
         >
-          <WhatsAppButton size="lg" message={waMessage} accent={accent}>
-            {isRed ? "Cotizar por WhatsApp" : "Agendar por WhatsApp"}
-          </WhatsAppButton>
+          <Magnetic strength={0.4}>
+            <WhatsAppButton size="lg" message={waMessage} accent={accent}>
+              {isRed ? "Cotizar por WhatsApp" : "Agendar por WhatsApp"}
+            </WhatsAppButton>
+          </Magnetic>
         </motion.div>
       </div>
     </section>
