@@ -34,6 +34,7 @@ export function NosotrosView() {
       <SectionHero
         eyebrow="F&I WASH · Sobre Nosotros"
         breadcrumbLabel="Nosotros"
+        variant="about"
         title="Más que un taller,"
         highlight="tu aliado"
         subtitle="Somos el centro automotriz integral de Santiago: mecánica, gomas y detailing premium bajo un mismo techo, con la confianza y el respaldo que tu vehículo merece."

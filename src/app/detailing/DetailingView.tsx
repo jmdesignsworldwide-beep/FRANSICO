@@ -34,6 +34,7 @@ export function DetailingView() {
       <SectionHero
         eyebrow="Velocity Wash · Detailing & Lavado"
         breadcrumbLabel="Detailing"
+        variant="wash"
         title="Detailing y"
         highlight="Lavado"
         subtitle="Cuidado profesional, protección y brillo de alta gama para tu vehículo en Santiago. Velocity Wash: tu auto como nuevo, por dentro y por fuera."

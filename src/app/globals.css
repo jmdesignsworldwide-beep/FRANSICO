@@ -14,6 +14,8 @@
 
   body {
     @apply bg-carbon text-offwhite font-sans antialiased;
+    /* Evita scroll horizontal por transforms transitorios (reveals/escenas). */
+    overflow-x: hidden;
     /* Fondo carbón con destellos metálicos muy sutiles */
     background-image:
       radial-gradient(60rem 60rem at 80% -10%, rgba(227, 6, 19, 0.10), transparent 60%),
@@ -71,6 +73,32 @@
 }
 
 @layer utilities {
+  /* Burbuja/espuma que sube (WaterScene) */
+  @keyframes bubble {
+    0% { transform: translate3d(0, 0, 0); opacity: 0; }
+    12% { opacity: 0.55; }
+    88% { opacity: 0.35; }
+    100% { transform: translate3d(12px, -130px, 0); opacity: 0; }
+  }
+  .animate-bubble { animation: bubble linear infinite; }
+
+  /* Gota que resbala hacia abajo (WaterScene) */
+  @keyframes drip {
+    0% { transform: translateY(-12px) scaleY(1); opacity: 0; }
+    18% { opacity: 0.7; }
+    100% { transform: translateY(150px) scaleY(1.4); opacity: 0; }
+  }
+  .animate-drip { animation: drip cubic-bezier(0.5, 0, 0.7, 0.2) infinite; }
+
+  /* Haz de luz que barre (ShowroomScene) */
+  @keyframes sweep {
+    0% { transform: translateX(-70%) rotate(14deg); opacity: 0; }
+    45% { opacity: 0.5; }
+    55% { opacity: 0.5; }
+    100% { transform: translateX(170%) rotate(14deg); opacity: 0; }
+  }
+  .animate-sweep { animation: sweep ease-in-out infinite; }
+
   /* Meteoro: estela diagonal que cruza y se desvanece */
   @keyframes meteor {
     0% {
