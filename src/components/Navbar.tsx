@@ -54,7 +54,7 @@ export function Navbar() {
             aria-label="F&I WASH Auto Services — Ir al inicio"
             className="shrink-0 rounded-lg"
           >
-            <Logo />
+            <Logo priority className="h-11 w-auto sm:h-12" />
           </Link>
 
           {/* Links desktop */}

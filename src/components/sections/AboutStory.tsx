@@ -82,7 +82,7 @@ export function AboutStory() {
 
             {/* contenido central */}
             <div className="relative flex h-full flex-col items-center justify-center gap-6 p-8 text-center">
-              <Logo showTagline className="scale-125" />
+              <Logo className="h-24 w-auto sm:h-28" />
               <div className="flex flex-wrap items-center justify-center gap-3">
                 {[
                   { icon: Wrench, label: "Mecánica", tint: "text-fi-red" },

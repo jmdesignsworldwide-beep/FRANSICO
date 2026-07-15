@@ -18,6 +18,7 @@ export function ContactoView() {
       <SectionHero
         eyebrow="F&I WASH · Contacto"
         breadcrumbLabel="Contacto"
+        variant="contact"
         title="Hablemos,"
         highlight="estamos aquí"
         subtitle="Escríbenos, llámanos o visítanos en Santiago. Te atendemos con gusto y sin fricción: elige el canal que prefieras."

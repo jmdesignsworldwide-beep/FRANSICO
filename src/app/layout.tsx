@@ -72,11 +72,13 @@ export const metadata: Metadata = {
     title: `${SITE.name}`,
     description: SITE.description,
   },
+  manifest: "/site.webmanifest",
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
-    apple: "/favicon.svg",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
   },
   robots: {
     index: true,

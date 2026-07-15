@@ -33,6 +33,7 @@ export function ServiciosView() {
       <SectionHero
         eyebrow="F&I WASH · Servicios"
         breadcrumbLabel="Servicios"
+        variant="mechanics"
         title="Mecánica y"
         highlight="Gomas"
         subtitle="Servicio automotriz integral en Santiago: expertos en neumáticos, balanceo, frenos y mantenimiento con el respaldo de Liqui Moly. Tu carro, en manos que saben."

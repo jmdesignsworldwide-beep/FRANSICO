@@ -15,7 +15,7 @@ export function Footer() {
       <div className="container-page grid grid-cols-1 gap-10 py-14 md:grid-cols-4">
         {/* Marca */}
         <div className="md:col-span-1">
-          <Logo showTagline />
+          <Logo className="h-12 w-auto" />
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-silver-muted">
             Mecánica, gomas y detailing premium en Santiago. Tu carro merece lo mejor.
           </p>
