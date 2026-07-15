@@ -11,6 +11,7 @@ import {
   TIRES_SERVICES,
   ACCESSORIES_SERVICES,
 } from "@/lib/services";
+import { HERO_IMAGES } from "@/lib/heroImages";
 
 const WA_MESSAGE =
   "Hola, quiero información sobre sus servicios de mecánica, gomas y accesorios.";
@@ -45,6 +46,7 @@ export function ServiciosView() {
         subtitle="Mecánica, gomas y accesorios en un solo lugar. Servicio automotriz integral en Santiago con el respaldo de Liqui Moly. Tu carro, en manos que saben."
         accent="red"
         waMessage={WA_MESSAGE}
+        image={HERO_IMAGES.servicios}
       />
 
       <ServicesGrid

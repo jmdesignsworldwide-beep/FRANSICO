@@ -6,7 +6,11 @@ import Link from "next/link";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { CTAButton } from "@/components/ui/CTAButton";
 import { Magnetic } from "@/components/ui/Magnetic";
-import { ThemedHero, type HeroVariant } from "@/components/heroes/ThemedHero";
+import {
+  ThemedHero,
+  type HeroVariant,
+  type HeroImage,
+} from "@/components/heroes/ThemedHero";
 
 type Accent = "red" | "blue";
 
@@ -36,6 +40,7 @@ export function SectionHero({
   waMessage,
   secondaryHref,
   secondaryLabel,
+  image,
 }: {
   eyebrow: string;
   breadcrumbLabel: string;
@@ -48,11 +53,13 @@ export function SectionHero({
   waMessage?: string;
   secondaryHref?: string;
   secondaryLabel?: string;
+  /** Foto de fondo temática opcional. */
+  image?: HeroImage;
 }) {
   const isRed = accent === "red";
 
   return (
-    <ThemedHero variant={variant} accent={accent}>
+    <ThemedHero variant={variant} accent={accent} image={image}>
       {/* Breadcrumb */}
       <motion.nav
         aria-label="Ruta de navegación"

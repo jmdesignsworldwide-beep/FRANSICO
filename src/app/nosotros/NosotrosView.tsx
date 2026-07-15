@@ -9,6 +9,7 @@ import { StatsBand, type Stat } from "@/components/sections/StatsBand";
 import { Alliances } from "@/components/sections/Alliances";
 import { LocationTeaser } from "@/components/sections/LocationTeaser";
 import { CTASection } from "@/components/sections/CTASection";
+import { HERO_IMAGES } from "@/lib/heroImages";
 
 const WA_MESSAGE = "Hola, quiero más información sobre F&I WASH";
 
@@ -42,6 +43,7 @@ export function NosotrosView() {
         waMessage={WA_MESSAGE}
         secondaryHref="/contacto"
         secondaryLabel="Contáctanos"
+        image={HERO_IMAGES.nosotros}
       />
 
       <AboutStory />

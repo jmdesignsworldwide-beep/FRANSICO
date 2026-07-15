@@ -5,6 +5,7 @@ import { ContactCards } from "@/components/sections/ContactCards";
 import { MapEmbed } from "@/components/sections/MapEmbed";
 import { ContactForm } from "@/components/sections/ContactForm";
 import { ContactClosing } from "@/components/sections/ContactClosing";
+import { HERO_IMAGES } from "@/lib/heroImages";
 
 const WA_MESSAGE = "Hola, quiero información / agendar un servicio";
 
@@ -24,6 +25,7 @@ export function ContactoView() {
         subtitle="Escríbenos, llámanos o visítanos en Santiago. Te atendemos con gusto y sin fricción: elige el canal que prefieras."
         accent="red"
         waMessage={WA_MESSAGE}
+        image={HERO_IMAGES.contacto}
       />
 
       <ContactCards />

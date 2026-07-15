@@ -7,6 +7,7 @@ import { DetailingPromo } from "@/components/sections/DetailingPromo";
 import { StatsBand, type Stat } from "@/components/sections/StatsBand";
 import { CTASection } from "@/components/sections/CTASection";
 import { DETAILING_SERVICES } from "@/lib/services";
+import { HERO_IMAGES } from "@/lib/heroImages";
 
 const WA_MESSAGE =
   "Hola, quiero agendar un servicio de detailing / lavado para mi vehículo.";
@@ -40,6 +41,7 @@ export function DetailingView() {
         subtitle="Nuestro lavado exprés hace que la limpieza del coche sea fácil: conduce dentro, relájate y sal con un coche impecable. Cuidado profesional y brillo de alta gama en Santiago."
         accent="blue"
         waMessage={WA_MESSAGE}
+        image={HERO_IMAGES.detailing}
       />
 
       <ServicesGrid
