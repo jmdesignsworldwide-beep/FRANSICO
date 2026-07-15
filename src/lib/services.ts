@@ -17,8 +17,8 @@ import {
   Armchair,
   Sofa,
   SprayCan,
-  Waves,
-  Sparkles,
+  Atom,
+  Hand,
   Eraser,
   Lightbulb,
   Shield,
@@ -118,13 +118,13 @@ export const DETAILING_SERVICES: Service[] = [
     title: "Tratamiento de ozono",
     description:
       "Eliminación de olores y bacterias del habitáculo con tecnología de ozono.",
-    icon: Waves,
+    icon: Atom,
   },
   {
     title: "Lavado y encerado a mano",
     description:
       "Lavado manual detallado y encerado que protege y da brillo espejo.",
-    icon: Sparkles,
+    icon: Hand,
   },
   {
     title: "Corrección de rayaduras",

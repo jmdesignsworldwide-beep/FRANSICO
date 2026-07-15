@@ -21,13 +21,18 @@ export function WhatsAppButton({
   size = "md",
   className = "",
   pulse = true,
+  accent = "red",
 }: {
   message?: string;
   children?: React.ReactNode;
   size?: Size;
   className?: string;
   pulse?: boolean;
+  /** Tinte del halo (pulse-glow) para armonizar con la división. */
+  accent?: "red" | "velocity";
 }) {
+  const pulseClass =
+    accent === "velocity" ? "animate-pulse-glow-velocity" : "animate-pulse-glow";
   return (
     <a
       href={waLink(message)}
@@ -35,7 +40,7 @@ export function WhatsAppButton({
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
       className={`group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-full bg-[#25D366] font-heading font-semibold uppercase tracking-wide text-carbon shadow-lg transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#1FBE5A] focus-visible:ring-2 focus-visible:ring-[#25D366] focus-visible:ring-offset-2 focus-visible:ring-offset-carbon ${
-        pulse ? "animate-pulse-glow" : ""
+        pulse ? pulseClass : ""
       } ${sizes[size]} ${className}`}
     >
       {/* barrido shimmer */}

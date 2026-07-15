@@ -37,7 +37,7 @@ export function CTASection({
         <BorderBeam
           duration={10}
           colorFrom={isRed ? "#E30613" : "#6B2FB3"}
-          colorTo={isRed ? "#FF2436" : "#8B4FD9"}
+          colorTo={isRed ? "#FF2436" : "#F2B441"}
         />
         {/* glow de fondo */}
         <div
@@ -55,7 +55,7 @@ export function CTASection({
         </p>
 
         <div className="relative mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <WhatsAppButton size="lg" message={waMessage}>
+          <WhatsAppButton size="lg" message={waMessage} accent={accent}>
             Escríbenos por WhatsApp
           </WhatsAppButton>
           <CTAButton

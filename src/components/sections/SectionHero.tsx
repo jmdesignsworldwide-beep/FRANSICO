@@ -57,6 +57,10 @@ export function SectionHero({
             isRed ? "bg-fi-red/10" : "bg-velocity/12"
           }`}
         />
+        {/* Toque dorado tipo destello de agua, solo en la división de detailing */}
+        {!isRed ? (
+          <div className="absolute left-[12%] top-[55%] h-40 w-40 rounded-full bg-gold/10 blur-[90px] animate-float [animation-delay:-1.5s]" />
+        ) : null}
       </div>
 
       <div className="container-page relative flex min-h-[62vh] flex-col items-center justify-center py-24 text-center sm:min-h-[68vh]">
@@ -135,8 +139,8 @@ export function SectionHero({
           animate="visible"
           className="mt-9"
         >
-          <WhatsAppButton size="lg" message={waMessage}>
-            Cotizar por WhatsApp
+          <WhatsAppButton size="lg" message={waMessage} accent={accent}>
+            {isRed ? "Cotizar por WhatsApp" : "Agendar por WhatsApp"}
           </WhatsAppButton>
         </motion.div>
       </div>
