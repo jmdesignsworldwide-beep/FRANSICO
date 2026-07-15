@@ -43,22 +43,34 @@ export function Hero() {
         />
       </motion.div>
 
-      {/* Tagline */}
-      <motion.p
+      {/* Eslogan oficial */}
+      <motion.h1
         custom={2}
         variants={fadeUp}
         initial="hidden"
         animate="visible"
-        className="mt-7 max-w-2xl text-balance text-base text-silver-muted sm:text-lg"
+        className="mt-7 max-w-3xl font-display text-3xl leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl"
       >
-        Mecánica y gomas de precisión + detailing y lavado profesional{" "}
-        <span className="text-velocity-glow">Velocity Wash</span>. Todo tu carro,
-        bajo un mismo techo y al más alto nivel.
+        Todo para tu vehículo{" "}
+        <span className="text-fi-red">en un solo lugar</span>
+      </motion.h1>
+
+      {/* Tagline */}
+      <motion.p
+        custom={3}
+        variants={fadeUp}
+        initial="hidden"
+        animate="visible"
+        className="mt-5 max-w-2xl text-balance text-base text-silver-muted sm:text-lg"
+      >
+        Mecánica, gomas y accesorios + detailing y lavado profesional{" "}
+        <span className="text-velocity-glow">Velocity Wash</span>. Bajo un mismo
+        techo y al más alto nivel.
       </motion.p>
 
       {/* CTAs */}
       <motion.div
-        custom={3}
+        custom={4}
         variants={fadeUp}
         initial="hidden"
         animate="visible"
@@ -86,7 +98,7 @@ export function Hero() {
 
       {/* Accesos rápidos a divisiones */}
       <motion.div
-        custom={4}
+        custom={5}
         variants={fadeUp}
         initial="hidden"
         animate="visible"

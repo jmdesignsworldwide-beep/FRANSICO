@@ -29,12 +29,13 @@ const config: Config = {
           muted: "#8A8F98",
         },
         velocity: {
-          // Acento morado (Velocity Wash / detailing)
-          DEFAULT: "#6B2FB3",
-          glow: "#8B4FD9",
+          // Acento AZUL de Velocity Wash (detailing) — identidad real (azul + dorado)
+          DEFAULT: "#2D6BE0", // azul eléctrico
+          glow: "#5B8DF0", // azul claro (texto/brillo)
+          deep: "#1B3A8F", // azul profundo
         },
         gold: {
-          // Toque dorado del brochure Velocity Wash
+          // Dorado de Velocity Wash
           DEFAULT: "#F2B441",
           glow: "#FFC95A",
         },
@@ -48,8 +49,8 @@ const config: Config = {
       boxShadow: {
         "glow-red": "0 0 30px -5px rgba(227, 6, 19, 0.45)",
         "glow-red-lg": "0 0 60px -10px rgba(227, 6, 19, 0.55)",
-        "glow-velocity": "0 0 30px -5px rgba(107, 47, 179, 0.5)",
-        "glow-velocity-lg": "0 0 60px -10px rgba(139, 79, 217, 0.55)",
+        "glow-velocity": "0 0 30px -5px rgba(45, 107, 224, 0.5)",
+        "glow-velocity-lg": "0 0 60px -10px rgba(91, 141, 240, 0.55)",
         "glow-gold": "0 0 30px -5px rgba(242, 180, 65, 0.5)",
       },
       backgroundImage: {
@@ -77,8 +78,8 @@ const config: Config = {
           "50%": { boxShadow: "0 0 34px -2px rgba(227,6,19,0.85)" },
         },
         "pulse-glow-velocity": {
-          "0%, 100%": { boxShadow: "0 0 20px -6px rgba(107,47,179,0.55)" },
-          "50%": { boxShadow: "0 0 34px -2px rgba(139,79,217,0.9)" },
+          "0%, 100%": { boxShadow: "0 0 20px -6px rgba(45,107,224,0.55)" },
+          "50%": { boxShadow: "0 0 34px -2px rgba(91,141,240,0.9)" },
         },
         float: {
           "0%, 100%": { transform: "translateY(0)" },

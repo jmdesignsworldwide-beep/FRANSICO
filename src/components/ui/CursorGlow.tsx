@@ -39,7 +39,7 @@ export function CursorGlow() {
       style={{ x: sx, y: sy }}
       className="pointer-events-none fixed left-0 top-0 z-[55] hidden h-80 w-80 rounded-full opacity-60 blur-[80px] md:block"
     >
-      <div className="h-full w-full rounded-full bg-[radial-gradient(circle,rgba(227,6,19,0.18),rgba(107,47,179,0.10)_45%,transparent_70%)]" />
+      <div className="h-full w-full rounded-full bg-[radial-gradient(circle,rgba(227,6,19,0.18),rgba(45,107,224,0.10)_45%,transparent_70%)]" />
     </motion.div>
   );
 }

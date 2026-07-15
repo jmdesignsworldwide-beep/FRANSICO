@@ -1,7 +1,8 @@
-import { Gift, Sparkles, CircleDot } from "lucide-react";
+import { Gift, Sparkles, CircleDot, Car } from "lucide-react";
 import { Marquee } from "@/components/ui/Marquee";
 
 const promos = [
+  { icon: Car, text: "¡Especial para carros mayores!" },
   { icon: Gift, text: "6to lavado GRATIS" },
   { icon: Sparkles, text: "12vo encerado GRATIS" },
   { icon: CircleDot, text: "¡Especial de Gomas!" },

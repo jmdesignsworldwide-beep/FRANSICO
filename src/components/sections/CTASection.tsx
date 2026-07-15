@@ -7,7 +7,7 @@ import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { BorderBeam } from "@/components/ui/BorderBeam";
 import { SITE } from "@/lib/site";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 /**
  * Bloque de cierre reutilizable con CTA fuerte.
@@ -36,7 +36,7 @@ export function CTASection({
       >
         <BorderBeam
           duration={10}
-          colorFrom={isRed ? "#E30613" : "#6B2FB3"}
+          colorFrom={isRed ? "#E30613" : "#2D6BE0"}
           colorTo={isRed ? "#FF2436" : "#F2B441"}
         />
         {/* glow de fondo */}

@@ -64,7 +64,7 @@ export function AboutStory() {
         </div>
 
         {/* Composición visual animada (sin foto: abstracto premium) */}
-        <ScrollReveal direction="left">
+        <ScrollReveal>
           <motion.div
             whileHover={{ y: -6 }}
             className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 bg-carbon-700/60 backdrop-blur-sm"

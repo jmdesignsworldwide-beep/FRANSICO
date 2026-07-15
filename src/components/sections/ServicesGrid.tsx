@@ -5,11 +5,11 @@ import { StaggerReveal, StaggerItem } from "@/components/ui/ScrollReveal";
 import { TextReveal } from "@/components/ui/TextReveal";
 import type { Service } from "@/lib/services";
 
-type Accent = "red" | "velocity";
+type Accent = "red" | "blue";
 
 /**
  * Grid animado de servicios con scroll reveal escalonado.
- * Reutilizable entre Servicios (rojo) y Detailing (morado).
+ * Reutilizable entre Servicios (rojo) y Detailing (azul).
  */
 export function ServicesGrid({
   eyebrow,

@@ -21,7 +21,7 @@ const divisions = [
     title: "Detailing y Lavado",
     desc: "Lavado y encerado a mano, corrección de pintura, cerámica, tratamiento de ozono y restauración de faros. Tu carro como nuevo.",
     icon: SprayCan,
-    accent: "velocity" as const,
+    accent: "blue" as const,
   },
 ];
 
@@ -55,8 +55,8 @@ export function Divisions() {
                 >
                   <BorderBeam
                     duration={9}
-                    colorFrom={isRed ? "#E30613" : "#6B2FB3"}
-                    colorTo={isRed ? "#FF2436" : "#8B4FD9"}
+                    colorFrom={isRed ? "#E30613" : "#2D6BE0"}
+                    colorTo={isRed ? "#FF2436" : "#F2B441"}
                   />
 
                   {/* glow de fondo al hover */}

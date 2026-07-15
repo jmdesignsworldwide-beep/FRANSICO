@@ -6,10 +6,17 @@ import { ServicesGrid } from "@/components/sections/ServicesGrid";
 import { ServicesPromo } from "@/components/sections/ServicesPromo";
 import { StatsBand, type Stat } from "@/components/sections/StatsBand";
 import { CTASection } from "@/components/sections/CTASection";
-import { MECHANIC_SERVICES } from "@/lib/services";
+import {
+  MECHANIC_SERVICES,
+  TIRES_SERVICES,
+  ACCESSORIES_SERVICES,
+} from "@/lib/services";
 
 const WA_MESSAGE =
-  "Hola, quiero información sobre sus servicios de mecánica y gomas.";
+  "Hola, quiero información sobre sus servicios de mecánica, gomas y accesorios.";
+
+const TOTAL_SERVICES =
+  MECHANIC_SERVICES.length + TIRES_SERVICES.length + ACCESSORIES_SERVICES.length;
 
 /**
  * NOTA PARA FRANCISCO: las cifras de esta franja son placeholders razonables.
@@ -18,14 +25,13 @@ const WA_MESSAGE =
 const STATS: Stat[] = [
   { icon: Award, value: 10, suffix: "+", label: "Años de experiencia" },
   { icon: Car, value: 5000, suffix: "+", label: "Vehículos atendidos" },
-  { icon: Wrench, value: 10, suffix: "", label: "Servicios disponibles" },
+  { icon: Wrench, value: TOTAL_SERVICES, suffix: "", label: "Servicios disponibles" },
   { icon: ShieldCheck, value: 100, suffix: "%", label: "Trabajo garantizado" },
 ];
 
 /**
- * Vista cliente de /servicios. Es cliente para que los datos con iconos de
- * lucide se pasen client→client (sin cruzar la frontera de serialización RSC).
- * La metadata SEO vive en el server component page.tsx.
+ * Vista cliente de /servicios (F&I WASH). Organiza los servicios reales en
+ * tres bloques: Mecánica Automotriz, Gomas & Aros y Auto Adorno / Accesorios.
  */
 export function ServiciosView() {
   return (
@@ -34,18 +40,34 @@ export function ServiciosView() {
         eyebrow="F&I WASH · Servicios"
         breadcrumbLabel="Servicios"
         variant="mechanics"
-        title="Mecánica y"
-        highlight="Gomas"
-        subtitle="Servicio automotriz integral en Santiago: expertos en neumáticos, balanceo, frenos y mantenimiento con el respaldo de Liqui Moly. Tu carro, en manos que saben."
+        title="Todo para tu"
+        highlight="vehículo"
+        subtitle="Mecánica, gomas y accesorios en un solo lugar. Servicio automotriz integral en Santiago con el respaldo de Liqui Moly. Tu carro, en manos que saben."
         accent="red"
         waMessage={WA_MESSAGE}
       />
 
       <ServicesGrid
-        eyebrow="Todo bajo un mismo techo"
-        title="Nuestros 10 servicios"
-        subtitle="Desde tus gomas hasta el tren delantero, cubrimos cada detalle con precisión y honestidad."
+        eyebrow="Mecánica Automotriz"
+        title="Mecánica y mantenimiento"
+        subtitle="Del cambio de aceite al tren delantero: cubrimos cada detalle con precisión y honestidad."
         services={MECHANIC_SERVICES}
+        accent="red"
+      />
+
+      <ServicesGrid
+        eyebrow="Gomas & Aros"
+        title="Gomas, aros y balanceo"
+        subtitle="Gomas nuevas y usadas, montura, balanceo, reparación y rectificación de aros."
+        services={TIRES_SERVICES}
+        accent="red"
+      />
+
+      <ServicesGrid
+        eyebrow="Auto Adorno & Accesorios"
+        title="Todo para equipar tu carro"
+        subtitle="Lubricantes, aceites, coolant, accesorios y aromatizantes de calidad."
+        services={ACCESSORIES_SERVICES}
         accent="red"
       />
 

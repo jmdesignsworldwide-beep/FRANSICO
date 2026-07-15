@@ -64,7 +64,7 @@ export function LocationTeaser() {
           </div>
 
           {/* Tarjeta visual con pin animado */}
-          <ScrollReveal direction="left">
+          <ScrollReveal>
             <div className="relative grid aspect-video place-items-center overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-carbon-700 to-carbon-800">
               {/* anillos de pulso */}
               <div aria-hidden className="absolute">

@@ -29,10 +29,10 @@ export function WhatsAppButton({
   className?: string;
   pulse?: boolean;
   /** Tinte del halo (pulse-glow) para armonizar con la división. */
-  accent?: "red" | "velocity";
+  accent?: "red" | "blue";
 }) {
   const pulseClass =
-    accent === "velocity" ? "animate-pulse-glow-velocity" : "animate-pulse-glow";
+    accent === "blue" ? "animate-pulse-glow-velocity" : "animate-pulse-glow";
   return (
     <a
       href={waLink(message)}

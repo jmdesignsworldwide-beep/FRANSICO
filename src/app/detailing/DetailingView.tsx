@@ -16,38 +16,38 @@ const WA_MESSAGE =
  * Reemplázalas con los datos reales de Velocity Wash (autos detallados, años, etc.).
  */
 const STATS: Stat[] = [
-  { icon: Car, value: 3000, suffix: "+", label: "Autos detallados" },
-  { icon: Sparkles, value: 8, suffix: "", label: "Servicios de detailing" },
+  { icon: Car, value: 3000, suffix: "+", label: "Autos lavados y detallados" },
+  { icon: Sparkles, value: 8, suffix: "", label: "Servicios de lavado" },
   { icon: Droplets, value: 100, suffix: "%", label: "Acabado a mano" },
-  { icon: ShieldCheck, value: 12, suffix: " meses", label: "Protección cerámica" },
+  { icon: ShieldCheck, value: 100, suffix: "%", label: "Cuidado garantizado" },
 ];
 
 /**
  * Vista cliente de /detailing (Velocity Wash). Es cliente para pasar los datos
  * con iconos de lucide client→client (sin cruzar la frontera RSC). La metadata
  * SEO vive en el server component page.tsx.
- * Acento morado + dorado, hermano visual de /servicios (rojo).
+ * Acento AZUL + dorado (identidad real de Velocity Wash), hermano de /servicios (rojo).
  */
 export function DetailingView() {
   return (
     <>
       <SectionHero
-        eyebrow="Velocity Wash · Detailing & Lavado"
+        eyebrow="Velocity Wash · Especialista en detallado"
         breadcrumbLabel="Detailing"
         variant="wash"
-        title="Detailing y"
-        highlight="Lavado"
-        subtitle="Cuidado profesional, protección y brillo de alta gama para tu vehículo en Santiago. Velocity Wash: tu auto como nuevo, por dentro y por fuera."
-        accent="velocity"
+        title="Tu auto"
+        highlight="como nuevo"
+        subtitle="Nuestro lavado exprés hace que la limpieza del coche sea fácil: conduce dentro, relájate y sal con un coche impecable. Cuidado profesional y brillo de alta gama en Santiago."
+        accent="blue"
         waMessage={WA_MESSAGE}
       />
 
       <ServicesGrid
         eyebrow="Brillo de principio a fin"
-        title="Nuestros 8 servicios"
-        subtitle="Del cuero al último detalle de pintura: acabado impecable con productos premium y manos expertas."
+        title="Lavado y detallado"
+        subtitle="Del lavado express al detallado profundo: acabado impecable con productos premium y manos expertas."
         services={DETAILING_SERVICES}
-        accent="velocity"
+        accent="blue"
       />
 
       <DetailingPromo />
@@ -57,14 +57,14 @@ export function DetailingView() {
         title="Acabado que se siente premium"
         subtitle="Productos de alta gama, técnica profesional y protección que dura. Cada auto sale como recién estrenado."
         stats={STATS}
-        accent="velocity"
+        accent="blue"
       />
 
       <CTASection
         title="¿Listo para devolverle el brillo a tu auto?"
         subtitle="Agenda tu detailing o lavado con Velocity Wash y deja que tu vehículo luzca como el primer día."
         waMessage={WA_MESSAGE}
-        accent="velocity"
+        accent="blue"
       />
     </>
   );

@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Instagram, Facebook } from "lucide-react";
+import { Instagram } from "lucide-react";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { BorderBeam } from "@/components/ui/BorderBeam";
@@ -10,7 +10,7 @@ import { SITE } from "@/lib/site";
 
 /**
  * Cierre de la página de contacto: invitación final + redes.
- * NOTA PARA FRANCISCO: enlazar las redes reales (Instagram/Facebook) cuando las tengas.
+ * NOTA PARA FRANCISCO: Instagram real @fyiwashrd ya enlazado; añadir más redes si las hay.
  */
 export function ContactClosing() {
   return (
@@ -47,25 +47,17 @@ export function ContactClosing() {
           </Magnetic>
         </div>
 
-        {/* Redes (placeholder — reemplazar con enlaces reales) */}
-        <div className="relative mt-8 flex items-center justify-center gap-3">
+        {/* Redes reales */}
+        <div className="relative mt-8 flex items-center justify-center">
           <a
             href={SITE.social.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Instagram de F&I WASH"
-            className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-silver transition-all duration-300 hover:-translate-y-0.5 hover:border-fi-red/50 hover:text-white"
+            aria-label="Instagram de F&I WASH (@fyiwashrd)"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-silver transition-all duration-300 hover:-translate-y-0.5 hover:border-fi-red/50 hover:text-white"
           >
             <Instagram size={18} />
-          </a>
-          <a
-            href={SITE.social.facebook}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Facebook de F&I WASH"
-            className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/5 text-silver transition-all duration-300 hover:-translate-y-0.5 hover:border-fi-red/50 hover:text-white"
-          >
-            <Facebook size={18} />
+            {SITE.social.instagramHandle}
           </a>
         </div>
       </motion.div>
