@@ -2,9 +2,10 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
+import { CTAButton } from "@/components/ui/CTAButton";
 import { Magnetic } from "@/components/ui/Magnetic";
 import { Spotlight } from "@/components/ui/Spotlight";
 import { HeroFX } from "@/components/ui/HeroFX";
@@ -33,6 +34,8 @@ export function SectionHero({
   subtitle,
   accent = "red",
   waMessage,
+  secondaryHref,
+  secondaryLabel,
 }: {
   /** Texto pequeño superior (p. ej. "F&I WASH · Servicios"). */
   eyebrow: string;
@@ -45,6 +48,9 @@ export function SectionHero({
   subtitle: string;
   accent?: Accent;
   waMessage?: string;
+  /** CTA secundario opcional (p. ej. enlace a /contacto). */
+  secondaryHref?: string;
+  secondaryLabel?: string;
 }) {
   const isRed = accent === "red";
 
@@ -150,19 +156,31 @@ export function SectionHero({
           {subtitle}
         </motion.p>
 
-        {/* CTA WhatsApp */}
+        {/* CTAs */}
         <motion.div
           custom={4}
           variants={fadeUp}
           initial="hidden"
           animate="visible"
-          className="mt-9"
+          className="mt-9 flex flex-col items-center gap-3 sm:flex-row"
         >
           <Magnetic strength={0.4}>
             <WhatsAppButton size="lg" message={waMessage} accent={accent}>
               {isRed ? "Cotizar por WhatsApp" : "Agendar por WhatsApp"}
             </WhatsAppButton>
           </Magnetic>
+          {secondaryHref && secondaryLabel ? (
+            <Magnetic strength={0.3}>
+              <CTAButton
+                href={secondaryHref}
+                variant="outline"
+                size="lg"
+                icon={<ArrowRight size={18} />}
+              >
+                {secondaryLabel}
+              </CTAButton>
+            </Magnetic>
+          ) : null}
         </motion.div>
       </div>
     </section>
