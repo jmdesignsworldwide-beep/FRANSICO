@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Phone, MapPin, Instagram, MessageCircle, Mail } from "lucide-react";
 import { SITE, NAV_LINKS, waLink } from "@/lib/site";
 import { Logo } from "./ui/Logo";
 
@@ -106,18 +106,62 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Barra inferior */}
+      {/* Barra inferior: copyright del cliente */}
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-between gap-3 py-6 text-center text-xs text-silver-muted sm:flex-row sm:text-left">
+        <div className="container-page flex flex-col items-center justify-center gap-1 py-6 text-center text-xs text-silver-muted">
           <p>
             © {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.
           </p>
-          <p>
-            Desarrollado por{" "}
-            <span className="font-semibold text-silver">
-              {SITE.developer.name}
+        </div>
+      </div>
+
+      {/* Firma discreta del estudio (JM Nexus Designs) */}
+      <div className="border-t border-white/5 bg-carbon">
+        <div className="container-page flex flex-col items-center justify-center gap-x-2 gap-y-1 py-4 text-center text-[11px] text-silver-muted/80 sm:flex-row">
+          <span>
+            Diseñado por{" "}
+            <span className="font-semibold text-silver">{SITE.developer.name}</span>
+          </span>
+          <span aria-hidden className="hidden text-white/15 sm:inline">·</span>
+          <a
+            href={`mailto:${SITE.developer.email}`}
+            aria-label="Correo de JM Nexus Designs"
+            className="group inline-flex items-center gap-1 transition-colors hover:text-white"
+          >
+            <Mail size={12} className="opacity-70" />
+            <span className="relative">
+              {SITE.developer.email}
+              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-silver transition-all duration-300 group-hover:w-full" />
             </span>
-          </p>
+          </a>
+          <span aria-hidden className="hidden text-white/15 sm:inline">·</span>
+          <a
+            href={SITE.developer.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram de JM Nexus Designs"
+            className="group inline-flex items-center gap-1 transition-colors hover:text-white"
+          >
+            <Instagram size={12} className="opacity-70" />
+            <span className="relative">
+              {SITE.developer.instagramHandle}
+              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-silver transition-all duration-300 group-hover:w-full" />
+            </span>
+          </a>
+          <span aria-hidden className="hidden text-white/15 sm:inline">·</span>
+          <a
+            href={SITE.developer.whatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp de JM Nexus Designs"
+            className="group inline-flex items-center gap-1 transition-colors hover:text-white"
+          >
+            <MessageCircle size={12} className="opacity-70" />
+            <span className="relative">
+              WhatsApp
+              <span className="absolute -bottom-0.5 left-0 h-px w-0 bg-silver transition-all duration-300 group-hover:w-full" />
+            </span>
+          </a>
         </div>
       </div>
     </footer>

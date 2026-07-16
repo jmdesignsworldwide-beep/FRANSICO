@@ -64,7 +64,12 @@ export const SITE = {
   ],
 
   developer: {
-    name: "JM Designs Worldwide",
+    name: "JM Nexus Designs",
+    email: "jm.nexus.designs@gmail.com",
+    instagram: "https://instagram.com/jm.nexus.designs",
+    instagramHandle: "@jm.nexus.designs",
+    whatsapp: "https://wa.me/18494421919",
+    whatsappDisplay: "849-442-1919",
   },
 } as const;
 
