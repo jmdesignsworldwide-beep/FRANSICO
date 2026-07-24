@@ -18,19 +18,25 @@ create table if not exists public.app_admins (
 alter table public.app_admins enable row level security;
 alter table public.app_admins force row level security;
 
--- Nadie puede leer/escribir esta tabla vía la API (solo se gestiona por SQL/panel).
--- Sin políticas => acceso denegado por defecto con RLS activo. La función is_admin()
--- (SECURITY DEFINER) es la única que la consulta.
+-- Cada usuario solo puede ver su propia fila (mantiene la tabla privada y deja
+-- el Security Advisor limpio: RLS activo CON política explícita).
+drop policy if exists "app_admins_self_select" on public.app_admins;
+create policy "app_admins_self_select"
+  on public.app_admins
+  for select
+  to authenticated
+  using (user_id = auth.uid());
 
 -- ----------------------------------------------------------------------------
 -- 2) Función is_admin(): true si el usuario actual está en la allowlist.
---    SECURITY DEFINER + search_path fijo (evita secuestro de search_path).
+--    SECURITY INVOKER (corre con los permisos del que llama) + search_path fijo.
+--    La política self-select de arriba le permite leer su propia fila.
 -- ----------------------------------------------------------------------------
 create or replace function public.is_admin()
 returns boolean
 language sql
 stable
-security definer
+security invoker
 set search_path = ''
 as $$
   select exists (
@@ -38,7 +44,6 @@ as $$
   );
 $$;
 
-revoke all on function public.is_admin() from public, anon;
 grant execute on function public.is_admin() to authenticated;
 
 -- ----------------------------------------------------------------------------
@@ -109,13 +114,9 @@ on conflict (id) do update
       file_size_limit = excluded.file_size_limit,
       allowed_mime_types = excluded.allowed_mime_types;
 
--- Lectura pública SOLO de este bucket.
-drop policy if exists "service_photos_storage_read" on storage.objects;
-create policy "service_photos_storage_read"
-  on storage.objects
-  for select
-  to anon, authenticated
-  using (bucket_id = 'service-photos');
+-- Lectura: los objetos se sirven por su URL pública (bucket public = true), así que
+-- NO se crea política de SELECT en storage.objects. Evita el "listing" público del
+-- bucket (Security Advisor limpio) sin afectar la visualización de las fotos.
 
 -- Subir: solo admin autenticado.
 drop policy if exists "service_photos_storage_insert" on storage.objects;
