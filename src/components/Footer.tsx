@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, MapPin, Instagram, MessageCircle, Mail } from "lucide-react";
+import { Phone, MapPin, Instagram, MessageCircle, Mail, Lock } from "lucide-react";
 import { SITE, NAV_LINKS, waLink } from "@/lib/site";
 import { Logo } from "./ui/Logo";
 
@@ -106,12 +106,19 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Barra inferior: copyright del cliente */}
+      {/* Barra inferior: copyright del cliente + acceso admin */}
       <div className="border-t border-white/10">
-        <div className="container-page flex flex-col items-center justify-center gap-1 py-6 text-center text-xs text-silver-muted">
+        <div className="container-page flex flex-col items-center justify-center gap-3 py-6 text-center text-xs text-silver-muted">
           <p>
             © {new Date().getFullYear()} {SITE.name}. Todos los derechos reservados.
           </p>
+          <Link
+            href="/admin"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-silver-muted transition-all hover:-translate-y-0.5 hover:border-fi-red/50 hover:text-white hover:shadow-glow-red"
+          >
+            <Lock size={13} className="text-fi-red transition-transform group-hover:scale-110" />
+            Acceso administrador
+          </Link>
         </div>
       </div>
 
