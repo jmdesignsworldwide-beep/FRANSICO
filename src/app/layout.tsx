@@ -1,11 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Anton, Oswald, Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
-import { SmoothScroll } from "@/providers/SmoothScroll";
-import { ScrollProgress } from "@/components/ui/ScrollProgress";
-import { CursorGlow } from "@/components/ui/CursorGlow";
 import { SITE } from "@/lib/site";
 
 /* Fuentes self-hosted por next/font (se sirven desde /_next → cumple CSP font-src 'self'). */
@@ -96,25 +91,7 @@ export default function RootLayout({
       lang="es"
       className={`${anton.variable} ${oswald.variable} ${inter.variable}`}
     >
-      <body className="min-h-screen">
-        {/* Skip link accesible */}
-        <a
-          href="#contenido"
-          className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-fi-red focus:px-4 focus:py-2 focus:text-white"
-        >
-          Saltar al contenido
-        </a>
-
-        <ScrollProgress />
-        <CursorGlow />
-        <SmoothScroll>
-          <Navbar />
-          <main id="contenido" className="pt-16 md:pt-20">
-            {children}
-          </main>
-          <Footer />
-        </SmoothScroll>
-      </body>
+      <body className="min-h-screen">{children}</body>
     </html>
   );
 }

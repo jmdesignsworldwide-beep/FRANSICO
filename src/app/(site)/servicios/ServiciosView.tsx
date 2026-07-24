@@ -34,7 +34,11 @@ const STATS: Stat[] = [
  * Vista cliente de /servicios (F&I WASH). Organiza los servicios reales en
  * tres bloques: Mecánica Automotriz, Gomas & Aros y Auto Adorno / Accesorios.
  */
-export function ServiciosView() {
+export function ServiciosView({
+  photos,
+}: {
+  photos?: Record<string, { url: string; alt: string }[]>;
+}) {
   return (
     <>
       <SectionHero
@@ -55,6 +59,7 @@ export function ServiciosView() {
         subtitle="Del cambio de aceite al tren delantero: cubrimos cada detalle con precisión y honestidad."
         services={MECHANIC_SERVICES}
         accent="red"
+        photos={photos}
       />
 
       <ServicesGrid
@@ -63,6 +68,7 @@ export function ServiciosView() {
         subtitle="Gomas nuevas y usadas, montura, balanceo, reparación y rectificación de aros."
         services={TIRES_SERVICES}
         accent="red"
+        photos={photos}
       />
 
       <ServicesGrid
@@ -71,6 +77,7 @@ export function ServiciosView() {
         subtitle="Lubricantes, aceites, coolant, accesorios y aromatizantes de calidad."
         services={ACCESSORIES_SERVICES}
         accent="red"
+        photos={photos}
       />
 
       <ServicesPromo />

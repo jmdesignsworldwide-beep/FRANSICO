@@ -10,10 +10,10 @@ const ContentSecurityPolicy = `
   default-src 'self';
   script-src 'self' 'unsafe-inline' ${process.env.NODE_ENV === "development" ? "'unsafe-eval'" : ""};
   style-src 'self' 'unsafe-inline';
-  img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com https://maps.google.com https://*.google.com https://images.unsplash.com https://images.pexels.com;
+  img-src 'self' data: blob: https://*.googleapis.com https://*.gstatic.com https://maps.google.com https://*.google.com https://images.unsplash.com https://images.pexels.com https://*.supabase.co;
   font-src 'self' data:;
   frame-src 'self' https://www.google.com https://maps.google.com;
-  connect-src 'self';
+  connect-src 'self' https://*.supabase.co;
   object-src 'none';
   base-uri 'self';
   form-action 'self';
@@ -49,6 +49,8 @@ const nextConfig = {
     remotePatterns: [
       { protocol: "https", hostname: "images.unsplash.com" },
       { protocol: "https", hostname: "images.pexels.com" },
+      // Fotos de servicios subidas por el admin (Supabase Storage).
+      { protocol: "https", hostname: "*.supabase.co" },
     ],
   },
   async headers() {
