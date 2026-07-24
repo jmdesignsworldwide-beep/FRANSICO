@@ -17,12 +17,15 @@ export function ServicesGrid({
   subtitle,
   services,
   accent = "red",
+  photos,
 }: {
   eyebrow: string;
   title: string;
   subtitle?: string;
   services: Service[];
   accent?: Accent;
+  /** Mapa serviceKey → fotos reales (subidas por el admin). */
+  photos?: Record<string, { url: string; alt: string }[]>;
 }) {
   const isRed = accent === "red";
   return (
@@ -58,6 +61,7 @@ export function ServicesGrid({
             service={service}
             accent={accent}
             index={i}
+            photos={photos?.[service.key]}
           />
         ))}
       </StaggerReveal>

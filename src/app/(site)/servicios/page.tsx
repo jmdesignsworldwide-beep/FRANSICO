@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { ServiciosView } from "./ServiciosView";
+import { getPhotosByService } from "@/lib/photos";
+
+// ISR: las fotos nuevas del admin aparecen sin redeploy (y revalidación on-demand).
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Servicios: Mecánica, Gomas y Accesorios",
@@ -14,6 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServiciosPage() {
-  return <ServiciosView />;
+export default async function ServiciosPage() {
+  const photos = await getPhotosByService();
+  return <ServiciosView photos={photos} />;
 }

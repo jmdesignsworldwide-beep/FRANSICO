@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { DetailingView } from "./DetailingView";
+import { getPhotosByService } from "@/lib/photos";
+
+// ISR: las fotos nuevas del admin aparecen sin redeploy.
+export const revalidate = 60;
 
 export const metadata: Metadata = {
   title: "Detailing y Lavado · Velocity Wash",
@@ -14,6 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function DetailingPage() {
-  return <DetailingView />;
+export default async function DetailingPage() {
+  const photos = await getPhotosByService();
+  return <DetailingView photos={photos} />;
 }

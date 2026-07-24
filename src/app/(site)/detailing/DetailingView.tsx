@@ -29,7 +29,11 @@ const STATS: Stat[] = [
  * SEO vive en el server component page.tsx.
  * Acento AZUL + dorado (identidad real de Velocity Wash), hermano de /servicios (rojo).
  */
-export function DetailingView() {
+export function DetailingView({
+  photos,
+}: {
+  photos?: Record<string, { url: string; alt: string }[]>;
+}) {
   return (
     <>
       <SectionHero
@@ -50,6 +54,7 @@ export function DetailingView() {
         subtitle="Del lavado express al detallado profundo: acabado impecable con productos premium y manos expertas."
         services={DETAILING_SERVICES}
         accent="blue"
+        photos={photos}
       />
 
       <DetailingPromo />

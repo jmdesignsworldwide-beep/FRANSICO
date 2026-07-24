@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import type { Service } from "@/lib/services";
 import {
@@ -39,13 +40,17 @@ export function ServiceCard({
   service,
   accent = "red",
   index = 0,
+  photos,
 }: {
   service: Service;
   accent?: Accent;
   index?: number;
+  /** Fotos reales del servicio (subidas por el admin). Sin fotos → diseño de icono. */
+  photos?: { url: string; alt: string }[];
 }) {
   const a = accentMap[accent];
   const Icon = service.icon;
+  const cover = photos?.[0];
 
   const ref = useRef<HTMLElement>(null);
   const reduced = usePrefersReducedMotion();
@@ -98,11 +103,30 @@ export function ServiceCard({
         className={`pointer-events-none absolute -right-8 -top-8 h-24 w-24 rounded-full opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100 ${a.blob}`}
       />
 
-      <div
-        className={`relative mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 ${a.iconWrap}`}
-      >
-        <Icon size={26} strokeWidth={1.75} aria-hidden />
-      </div>
+      {/* Foto real del servicio (si el admin subió alguna); si no, diseño de icono */}
+      {cover ? (
+        <div className="relative -mx-6 -mt-6 mb-5 h-40 overflow-hidden">
+          <Image
+            src={cover.url}
+            alt={cover.alt || service.title}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 380px"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-carbon-700 via-carbon-700/30 to-transparent" />
+          <span
+            className={`absolute bottom-3 left-4 inline-flex h-11 w-11 items-center justify-center rounded-xl ${a.iconWrap}`}
+          >
+            <Icon size={22} strokeWidth={1.75} aria-hidden />
+          </span>
+        </div>
+      ) : (
+        <div
+          className={`relative mb-5 inline-flex h-14 w-14 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 ${a.iconWrap}`}
+        >
+          <Icon size={26} strokeWidth={1.75} aria-hidden />
+        </div>
+      )}
 
       <h3 className="relative mb-2 font-heading text-lg font-semibold text-offwhite">
         {service.title}
